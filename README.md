@@ -66,7 +66,7 @@ Salieron muchas respuestas de “No se” si llegamos a tener error 503 y 429
 
 ## Capturas
 
-![Pantalla Inicial](https://github.com/hectorgn2022/Estadisticas_Accesos_Clubs/blob/main/Pantalla%20inicial.png)
-![Primera Consulta Realizada](https://github.com/hectorgn2022/Estadisticas_Accesos_Clubs/blob/main/Primera%20consulta%20realizada.png)
-![Interaccion con la IA en COALB](https://github.com/hectorgn2022/Estadisticas_Accesos_Clubs/blob/main/Interacci%C3%B3n%20con%20la%20IA%20en%20COLAB.png)
-![No se puede interpretar la consulta](https://github.com/hectorgn2022/Estadisticas_Accesos_Clubs/blob/main/No%20puede%20interpretar%20la%20consulta.png)
+![Pantalla Inicial](Pantalla-inicial.png)
+![Primera Consulta Realizada](Primera-consulta-realizada.png)
+![Interaccion con la IA en COALB](Interaccion-con-la-IA-en-COLAB.png)
+![No se puede interpretar la consulta](No-puede-interpretar-la-consulta.png)
