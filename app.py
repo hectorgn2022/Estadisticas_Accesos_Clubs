@@ -246,7 +246,7 @@ with col_izquierda:
                         st.rerun()
                         
                 except Exception as e:
-                    st.error("Error al realizar tu consulta, prueba en unos minutos o verifica tu cuota de créditos.")
+                    st.error(f"Error al realizar tu consulta, prueba en unos minutos o verifica tu cuota de créditos. {e}")
 
     # Área para mostrar el Historial arriba
     st.markdown("### Historial de consultas")
