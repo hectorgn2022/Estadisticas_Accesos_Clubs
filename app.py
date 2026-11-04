@@ -95,8 +95,29 @@ st.markdown("##### **Captura tu consulta y oprime &lt;Enviar&gt;**")
 # Estructura de diseño: Parte izquierda (Operación e Historial), Parte derecha (Menú de opciones)
 col_izquierda, col_derecha = st.columns([3, 1])
 
+# Verificación preventiva del estado del archivo CSV
+ruta_archivo = "accesos_club.csv"
+csv_cargado_exito = False
+num_registros = 0
+
+try:
+    if os.path.exists(ruta_archivo):
+        df_check = pd.read_csv(ruta_archivo)
+        num_registros = len(df_check)
+        if num_registros > 0:
+            csv_cargado_exito = True
+except Exception as e:
+    pass
+
 with col_derecha:
     st.markdown("### Opciones")
+
+    # Indicador visual del estado del archivo CSV
+    st.markdown("**Estado de los Datos:**")
+    if csv_cargado_exito:
+        st.success(f"🟢 CSV Activo ({num_registros} registros)")
+    else:
+        st.error("🔴 Sin datos activos o CSV vacío")
 
     # Opción 1: Cargar Archivo CSV
     archivo_cargado = st.file_uploader("Cargar Archivo CSV", type=["csv"])
@@ -104,6 +125,7 @@ with col_derecha:
         with open("accesos_club.csv", "wb") as f:
             f.write(archivo_cargado.getbuffer())
         st.success("¡Archivo cargado correctamente!")
+        st.rerun()
 
     # Opción 2: Guardar Consulta anterior
     if st.button("Guardar Consulta anterior"):
@@ -212,7 +234,7 @@ with col_izquierda:
                         except Exception:
                             pass
 
-                    st.session_state.historial.insert(0, {
+                    st.session_state.historial.insert(0, { 
                         "pregunta": pregunta_usuario,
                         "respuesta": respuesta_texto,
                         "grafica": datos_grafica
